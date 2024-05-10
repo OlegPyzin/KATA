@@ -59,6 +59,11 @@
 // Интересно:
 // https://habr.com/ru/articles/271035/
 
+// =================================================================================================================
+// 2024-05-10
+// 1 Устранена ошибка обработки входной строки при разбиении на операнды.
+//   Воод строки 1+5 завершался исключением -> Needed to input TWO numbers to operate.
+
 import java.util.Scanner;
 
 public class Calc {
@@ -168,7 +173,7 @@ public class Calc {
             // System.out.println("Is space in the input: "+isSpace);
 
             // Делим введенную строку на два операнда
-            String operand1 = expression.substring(0, startOffset - 1);
+            String operand1 = expression.substring(0, startOffset);
 
             String operand2 = expression.substring(startOffset + 1, lenString);
             // System.out.println("Operand 1: ["+operand1+"]"+" Operand 2: ["+operand2+"]");
